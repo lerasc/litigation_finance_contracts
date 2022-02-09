@@ -2,10 +2,10 @@
 In this file, we implement the plaintiff-law firm-funder contract.
 """
 
-from plaintiff_lawfirm_contract import *
+from litigation_finance_contracts.plaintiff_lawfirm_contract import *
 
 def litigation_funding_contract(S          = 10 ** 6,
-                                H          = work_time_distribution( how='empirical_fit' ),
+                                H          = work_time_distribution( how='gamma' ),
                                 W_args     = None,
                                 X_L        = 10**6,
                                 eta_L      = 0.3,
