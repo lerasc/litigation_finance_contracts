@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name            =  'LitFin_contracts',
+    name            =  'litigation_finance_contracts',
     version         =  '1.0.0',
-    packages        = ['LitFin_contracts'], 
+    packages        = ['litigation_finance_contracts'], 
     url             =  '',
     license         =  '',
     author          ='Sandro C. Lera',
