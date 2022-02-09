@@ -1,0 +1,14 @@
+*.pyc
+*.h5
+*.pickle
+*.pkl
+*.pdf
+*.zip
+*.p
+*.csv
+*.gz
+*.xml
+*.iml
+*.doc
+*.docx
+*.numbers
