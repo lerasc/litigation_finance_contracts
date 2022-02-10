@@ -103,21 +103,23 @@ def work_time_distribution( how='gamma' ):
     """
 
     # We consider the empirical distribution of case durations in units of days. Then, we transform to hours by assuming
-    # a 1 hour per day (this is derived from the data). We have fitted a gamma distribution to the empirical data, and
-    # found the parameters implemented below.
+    # a 1 hour per day. We have fitted a gamma distribution to the empirical data, and found the parameters implemented 
+    # below. See paper for the definition of the gamma pdf with parameters a and b.
     if how=='gamma':
 
-        params  = ( 0.9, 0.7, 241)            # from the data, assuming 1h per day, 252 days per year
-        dist    = gamma( *params )            # initialize instance
-
-
+        a       = 1.04                               # parameter 'a', like in paper
+        loc     = 0.00                               # translational shift, not needed here, but included in scipy.
+        scale   = 212.77                             # inverse of parameter 'b' (cf. paper)
+        dist    = gamma( a=a, loc=loc, scale=scale ) # initialize instance
+ 
     # Same as for 'gamma' but with a log-normal distribution. In practice, it is not a good choice since it creates a
-    # right tail that is much fatter than the empirical one.
+    # right tail that is much fatter than the empirical one. This causes huge tail costs that lead to rejection of 
+    # most cases.
     elif how=='lognormal':
 
-        (mu,sigma) = (4.2,0.4)
+        mu         = 4.83
+        sigma      = 1.12
         dist       = lognorm( s=sigma, scale=np.exp(mu) )
-
 
     else:
 
