@@ -52,7 +52,7 @@ def litigation_funding_contract(S          = 10 ** 6,
                         a_L_a=a_L_a,   G_L_a=G_L_a,   OO_L=OO_L, S=S,  H=H,
                         W_args=W_args, X_L=X_L,       eta_L=eta_L,     U_args=U_args ) # fix all but x=(a, eta)
 
-    x0        = optimal_investment_analytical( S, eta_L, W_args['w_0'], W_args['w_1'], W_args['kappa'], H )
+    x0        = optimal_investment_analytical( S, H, eta_L, W_args['w_0'], W_args['w_1'], W_args['kappa'] )
     a_scale   = x0[0] # the set the 'scale' for where the optimal investment lies
     e_scale   = x0[1]
 

@@ -260,7 +260,6 @@ def plaintiff_lawyer_contract(S           = 10**5,
                                 parallel		=   False,                     # funder contract calls this in parallel
                                 full_ret        =   True,                      # for plotting
                                 )
-        a_L_a = a_L_a[0]                                                       # since it is 1d
 
     elif optimizer== 'scipy':
 
