@@ -338,6 +338,7 @@ def plaintiff_lawyer_contract(S           = 10**5,
     ax.set_xlabel(r'$\alpha$',      fontsize=fs )
     ax.set_ylabel(r'$G_L$',         fontsize=fs, color=cols[0])
     axt.set_ylabel(r'$w(\alpha)$',  fontsize=fs, color=cols[1])
+    ax.legend(loc='lower center', frameon=False, ncol=1, fontsize=fs-1)
 
     # set the axes colors and legend
     ####################################################################################################################
@@ -349,12 +350,10 @@ def plaintiff_lawyer_contract(S           = 10**5,
 
         ax.spines[loc].set_color(color)
         ax.set_ylabel(ax.get_ylabel(),  color=color, fontsize=fs)
-        _ = [t.set_color(color) for t in ax.xaxis.get_ticklines()]
-        _ = [t.set_color(color) for t in ax.xaxis.get_ticklabels()]
+        ax.yaxis.get_offset_text().set_color(color)
         _ = [t.set_color(color) for t in ax.yaxis.get_ticklines()]
         _ = [t.set_color(color) for t in ax.yaxis.get_ticklabels()]
 
-    ax.legend(loc='lower center', frameon=False, ncol=1, fontsize=fs-1)
     axt.grid(False)
 
     return ret, eval
